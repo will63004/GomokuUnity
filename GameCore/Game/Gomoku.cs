@@ -14,11 +14,6 @@ namespace GameCore.Game
             board = new Checkerboard(size);
         }
 
-        public int Add(int x, int y)
-        {
-            return x + y;
-        }
-
         public Gomoku NextTurn(Coordinate coordinate)
         {
             if (board.GetPieceColor(coordinate) != ePieceColor.None)

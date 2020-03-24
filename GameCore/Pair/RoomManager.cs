@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace GameCore.Pair
 {
@@ -7,16 +8,31 @@ namespace GameCore.Pair
     {
         private Dictionary<int, Room> rooms = new Dictionary<int, Room>();
 
-        public bool CreateSpaceRoom(string roomName, out int id)
+        public bool CreateSpaceRoom(string roomName, out int roomId)
         {
             Room room = new Room(roomName);
-            id = room.GetHashCode();
-            return rooms.TryAdd(id, room);
+            roomId = room.GetHashCode();
+            return rooms.TryAdd(roomId, room);
         }
 
-        public bool TryGetRoom(int id, out Room room)
+        public bool TryGetRoom(int roomId, out Room room)
         {
-            return rooms.TryGetValue(id, out room);
+            return rooms.TryGetValue(roomId, out room);
+        }
+
+        public IList<Room> GetRooms()
+        {
+            return rooms.Values.ToList();
+        }
+
+        public bool EnterRoom(int roomId, ulong playerId)
+        {
+            if (rooms.TryGetValue(roomId, out Room room))
+            {
+                return room.AddPlayer(playerId);
+            }
+            else
+                return false;
         }
     }
 }
