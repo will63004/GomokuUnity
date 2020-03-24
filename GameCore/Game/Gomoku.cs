@@ -1,7 +1,6 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
 
-namespace GameCore
+namespace GameCore.Game
 {
     public class Gomoku
     {
@@ -15,10 +14,15 @@ namespace GameCore
             board = new Checkerboard(size);
         }
 
+        public int Add(int x, int y)
+        {
+            return x + y;
+        }
+
         public Gomoku NextTurn(Coordinate coordinate)
         {
             if (board.GetPieceColor(coordinate) != ePieceColor.None)
-                throw new ValidationException("錯誤座標");
+                throw new Exception("錯誤座標");
 
             board.UpdatePiece(CurTurn, coordinate);
 
@@ -33,7 +37,7 @@ namespace GameCore
                     CurTurn = ePieceColor.Black;
                     break;
                 default:
-                    throw new ValidationException("只能放入黑白子");
+                    throw new Exception("只能放入黑白子");
             }
 
             return this;

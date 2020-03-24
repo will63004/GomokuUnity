@@ -1,4 +1,4 @@
-﻿namespace GameCore
+﻿namespace GameCore.Game
 {
     public struct Coordinate
     {
@@ -7,8 +7,8 @@
 
         public Coordinate(int x, int y)
         {
-            this.X = x;
-            this.Y = y;
+            X = x;
+            Y = y;
         }
     }
 }

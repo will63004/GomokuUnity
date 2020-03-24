@@ -65,3 +65,5 @@ crashlytics-build.properties
 /GameCore/obj
 /GameCoreTests/bin/Debug/netcoreapp3.0
 /GameCoreTests/obj
+/GameCore/bin/Debug
+/GameCoreTests/bin/Debug

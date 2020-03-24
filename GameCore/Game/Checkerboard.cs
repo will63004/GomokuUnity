@@ -1,7 +1,6 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
 
-namespace GameCore
+namespace GameCore.Game
 {
     public class Checkerboard
     {
@@ -26,7 +25,7 @@ namespace GameCore
             if (isValidCoordinate(ref coordinate))
                 return board[coordinate.X, coordinate.Y];
             else
-                throw new ValidationException("輸入非法座標");
+                throw new Exception("輸入非法座標");
         }
         internal bool isValidCoordinate(ref Coordinate coordinate)
         {

@@ -1,13 +1,7 @@
-﻿using GameCore;
+﻿using GameCore.Game;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Numerics;
-using System.Runtime.Intrinsics;
-using System.Text;
 
-namespace GameCoreTests.Game
+namespace GameCore.Game.Tests
 {
     [TestFixture()]
     public class GomokuTests
@@ -30,7 +24,7 @@ namespace GameCoreTests.Game
         [Test]
         public void AddOneBlackPiece()
         {
-            Coordinate coordinate = new Coordinate(0, 0);            
+            Coordinate coordinate = new Coordinate(0, 0);
             gomoku.NextTurn(coordinate);
 
             ePieceColor expected = gomoku.GetPieceColor(coordinate);
@@ -61,7 +55,7 @@ namespace GameCoreTests.Game
                   .NextTurn(new Coordinate(2, 1))
                   .NextTurn(new Coordinate(3, 0))
                   .NextTurn(new Coordinate(3, 1))
-                  .NextTurn(new Coordinate(4, 0));            
+                  .NextTurn(new Coordinate(4, 0));
 
             Assert.AreEqual(gomoku.Winner, ePieceColor.Black);
         }

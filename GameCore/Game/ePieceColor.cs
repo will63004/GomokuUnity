@@ -1,4 +1,4 @@
-﻿namespace GameCore
+﻿namespace GameCore.Game
 {
     public enum ePieceColor
     {
