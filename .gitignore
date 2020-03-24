@@ -61,3 +61,7 @@ crashlytics-build.properties
 /Gomoku/Temp
 /Gomoku/obj/Debug
 /Gomoku/Library
+/GameCore/bin/Debug/netcoreapp3.0
+/GameCore/obj
+/GameCoreTests/bin/Debug/netcoreapp3.0
+/GameCoreTests/obj
