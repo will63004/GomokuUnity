@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using GameCore.Pair;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -34,6 +33,34 @@ namespace GameCore.Pair.Tests
 
             for (int i = 0; i < playerAndAnswers.Count; ++i)
                 Assert.AreEqual(expecteds[i], playerAndAnswers[i].answer);
+        }
+
+        private static IEnumerable<TestCaseData> GameStatusData()
+        {
+            yield return new TestCaseData(new List<ulong>() { 1 });
+            yield return new TestCaseData(new List<ulong>() { 1, 2 });
+        }
+        [Test, TestCaseSource("GameStatusData")]
+        public void GameStatusIdleTest(List<ulong> players)
+        {
+            //Act
+            foreach (ulong player in players)
+                room.AddPlayer(player);
+
+            eGameStatus expected = room.GameStatus;
+
+            Assert.AreEqual(expected, eGameStatus.Idle);
+        }
+
+        [Test, TestCaseSource("GameStatusData")]
+        public void CanStartGame_GameStatusIdle_Test(List<ulong> players)
+        {
+            //Act
+            foreach (ulong player in players)
+                room.AddPlayer(player);
+
+            //Assert
+            Assert.AreEqual(room.CanStartGame, true);
         }
     }
 }

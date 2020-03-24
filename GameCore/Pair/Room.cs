@@ -10,6 +10,8 @@ namespace GameCore.Pair
         public string Name { get; private set; }
         private List<ulong> players = new List<ulong>();
         public IReadOnlyList<ulong> Players { get => players; }
+        public eGameStatus GameStatus { get; private set; }
+        public bool CanStartGame { get => GameStatus == eGameStatus.Idle; }
 
         public Room(string roomName)
         {

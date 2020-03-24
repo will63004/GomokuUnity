@@ -49,6 +49,7 @@ namespace GameCore.GameRoom.Tests
 
             Assert.AreEqual(ok, false);
         }
+
         [Test, TestCaseSource("EnterRoomMember")]
         public void EnterRoomTest(List<(ulong player, bool answer)> playerAndAnswers)
         {
