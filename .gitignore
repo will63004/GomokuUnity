@@ -58,3 +58,6 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+/Gomoku/Temp
+/Gomoku/obj/Debug
+/Gomoku/Library
