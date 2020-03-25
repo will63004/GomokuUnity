@@ -67,3 +67,6 @@ crashlytics-build.properties
 /GameCoreTests/obj
 /GameCore/bin/Debug
 /GameCoreTests/bin/Debug
+/CustomExtension/bin/Debug
+/CustomExtension/obj
+/Gomoku/obj/Release
