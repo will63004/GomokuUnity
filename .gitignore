@@ -69,3 +69,4 @@ crashlytics-build.properties
 /CustomExtension/bin/Debug
 /CustomExtension/obj
 /Gomoku/obj/Release
+/Gomoku/StartUp.csproj
