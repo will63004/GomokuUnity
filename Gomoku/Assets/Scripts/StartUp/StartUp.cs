@@ -11,5 +11,6 @@ public class StartUp : MonoBehaviour
     void Start()
     {
         Debug.Log(gomoku.Size);
+        gomoku.NextTurn(new Coordinate(0, 0));
     }
 }

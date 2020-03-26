@@ -58,7 +58,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy $(TargetDir)*.dll $(SolutionDir)Assets\Plugins\GameCore</PostBuildEvent>
+    <PostBuildEvent>xcopy $(TargetDir)*.* $(SolutionDir)Assets\Plugins\GameCore /Y</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent>
