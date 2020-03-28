@@ -70,3 +70,7 @@ crashlytics-build.properties
 /CustomExtension/obj
 /Gomoku/obj/Release
 /Gomoku/StartUp.csproj
+/Gomoku/Scene.csproj
+/Gomoku/Game.UI.csproj
+/Gomoku/Game.Scene.csproj
+/Gomoku/Assembly-CSharp.csproj

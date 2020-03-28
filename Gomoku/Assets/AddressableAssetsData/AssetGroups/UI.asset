@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: UI
+  m_EditorClassIdentifier: 
+  m_GroupName: UI
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 8d5eac7023e7cd14c9c5d758bf3009bc
+  m_SerializeEntries:
+  - m_GUID: 7eca9ebdc3bddd644888da2ba2aca75e
+    m_Address: Assets/UI/UIPairRoom.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_mainAssetType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    m_MainAsset: {fileID: 7996349370964626765, guid: 7eca9ebdc3bddd644888da2ba2aca75e,
+      type: 3}
+    m_TargetAsset: {fileID: 7996349370964626765, guid: 7eca9ebdc3bddd644888da2ba2aca75e,
+      type: 3}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 2755a8517de65f0458e56fa1ff5dbc3c, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: c24c3db58543ed8489960ba4e1314aec, type: 2}
+    - {fileID: 11400000, guid: 9a36c913492b9ae48baec41e2a7996f4, type: 2}

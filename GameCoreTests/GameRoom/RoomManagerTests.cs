@@ -1,8 +1,6 @@
-﻿using NUnit.Framework;
-using System;
+﻿using GameCore.Pair;
+using NUnit.Framework;
 using System.Collections.Generic;
-using System.Text;
-using GameCore.Pair;
 
 namespace GameCore.GameRoom.Tests
 {

@@ -1,5 +1,4 @@
-﻿using GameCore.Game;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace GameCore.Game.Tests
 {

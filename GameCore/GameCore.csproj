@@ -41,6 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DI\TempDI.cs" />
+    <Compile Include="GameFSM\DefaultGameState.cs" />
+    <Compile Include="GameFSM\eGameFSM.cs" />
+    <Compile Include="GameFSM\GameFSM.cs" />
+    <Compile Include="GameFSM\GameState.cs" />
+    <Compile Include="GameFSM\IGameFSM.cs" />
+    <Compile Include="UI\IUIRoomPair.cs" />
+    <Compile Include="GameFSM\StartUpGameState.cs" />
+    <Compile Include="GameFSM\PairRoomState.cs" />
+    <Compile Include="Scene\eLoadSceneMode.cs" />
+    <Compile Include="Scene\eScene.cs" />
+    <Compile Include="Scene\ISceneManager.cs" />
     <Compile Include="Game\Checkerboard.cs" />
     <Compile Include="Game\Coordinate.cs" />
     <Compile Include="Game\ePieceColor.cs" />
@@ -49,6 +61,7 @@
     <Compile Include="Pair\Room.cs" />
     <Compile Include="Pair\RoomManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\IUIManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CustomExtension\CustomExtension.csproj">
