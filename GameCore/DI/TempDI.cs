@@ -1,5 +1,6 @@
 ﻿using GameCore.GameFSM;
 using GameCore.Scene;
+using GameCore.Table;
 using GameCore.UI;
 
 namespace GameCore.DI
@@ -11,5 +12,7 @@ namespace GameCore.DI
         public static IGameFSM GameFSM { get; set; }
 
         public static IUIManager UIManager { get; set; }
+
+        public static ITableLoader TableLoader { get; set; }
     }
 }

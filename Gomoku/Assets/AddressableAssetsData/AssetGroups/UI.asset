@@ -17,8 +17,18 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 8d5eac7023e7cd14c9c5d758bf3009bc
   m_SerializeEntries:
+  - m_GUID: 214deba20896bd349857c263992bac3a
+    m_Address: Assets/UI/UIStartUp.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_mainAssetType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    m_MainAsset: {fileID: 6990206911567217505, guid: 214deba20896bd349857c263992bac3a,
+      type: 3}
+    m_TargetAsset: {fileID: 6990206911567217505, guid: 214deba20896bd349857c263992bac3a,
+      type: 3}
   - m_GUID: 7eca9ebdc3bddd644888da2ba2aca75e
-    m_Address: Assets/UI/UIPairRoom.prefab
+    m_Address: Assets/UI/UIRoomPair.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_mainAssetType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,

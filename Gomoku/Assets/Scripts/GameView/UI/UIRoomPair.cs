@@ -1,7 +1,7 @@
 ﻿using GameCore.UI;
 using UnityEngine;
 
-public class UIPairRoom : MonoBehaviour, IUIRoomPair
+public class UIRoomPair : MonoBehaviour, IUIRoomPair
 {
     // Start is called before the first frame update
     void Start()

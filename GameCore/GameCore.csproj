@@ -47,6 +47,8 @@
     <Compile Include="GameFSM\GameFSM.cs" />
     <Compile Include="GameFSM\GameState.cs" />
     <Compile Include="GameFSM\IGameFSM.cs" />
+    <Compile Include="Table\ITable.cs" />
+    <Compile Include="Table\ITableLoader.cs" />
     <Compile Include="UI\IUIRoomPair.cs" />
     <Compile Include="GameFSM\StartUpGameState.cs" />
     <Compile Include="GameFSM\PairRoomState.cs" />
@@ -62,6 +64,7 @@
     <Compile Include="Pair\RoomManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI\IUIManager.cs" />
+    <Compile Include="UI\IUIStartUp.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CustomExtension\CustomExtension.csproj">

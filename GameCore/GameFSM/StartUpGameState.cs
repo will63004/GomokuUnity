@@ -1,4 +1,5 @@
 ﻿using GameCore.Scene;
+using GameCore.UI;
 using System.Threading.Tasks;
 
 namespace GameCore.GameFSM
@@ -7,16 +8,23 @@ namespace GameCore.GameFSM
     {
         private IGameFSM gameFSM;
         private ISceneManager sceneManager;
+        private IUIManager uiManager;
 
-        public StartUpGameState(IGameFSM gameFSM, ISceneManager sceneManager)
+        public StartUpGameState(IGameFSM gameFSM, ISceneManager sceneManager, IUIManager uiManager)
         {
             this.gameFSM = gameFSM;
             this.sceneManager = sceneManager;
+            this.uiManager = uiManager;
         }
 
         internal override async Task EnterAsync(eGameFSM curState)
         {
-            await sceneManager.LoadSceneAsync(eScene.StartUp);
+            await uiManager.LoadUIAsync<IUIStartUp>();
+        }
+
+        internal override async Task ExitAsync()
+        {
+            await uiManager.UnloadUIAsync<IUIStartUp>();
         }
     }
 }

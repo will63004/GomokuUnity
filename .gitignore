@@ -74,3 +74,5 @@ crashlytics-build.properties
 /Gomoku/Game.UI.csproj
 /Gomoku/Game.Scene.csproj
 /Gomoku/Assembly-CSharp.csproj
+/Gomoku/ScriptableObject.csproj
+/Gomoku/Table.csproj

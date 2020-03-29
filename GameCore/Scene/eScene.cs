@@ -2,7 +2,7 @@
 {
     public enum eScene
     {
-        StartUp,
+        UI,
         PairRoom,
     }
 }

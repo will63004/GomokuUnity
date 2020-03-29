@@ -16,7 +16,7 @@ namespace GameCore.GameFSM
         {
             var states = new Dictionary<eGameFSM, GameState>();
             states.Add(eGameFSM.Default, new DefaultGameState(this));
-            states.Add(eGameFSM.StartUp, new StartUpGameState(this, sceneManager));
+            states.Add(eGameFSM.StartUp, new StartUpGameState(this, sceneManager, uiManager));
             states.Add(eGameFSM.PairRoom, new PairRoomState(this, uiManager));
             this.states = states;
         }
