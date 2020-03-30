@@ -1,7 +1,7 @@
 ﻿using GameCore.DI;
+using GameCore.UI;
 using UnityEngine;
 using UnityEngine.UI;
-using GameCore.UI;
 
 public class UIStartUp : MonoBehaviour, IUIStartUp
 {

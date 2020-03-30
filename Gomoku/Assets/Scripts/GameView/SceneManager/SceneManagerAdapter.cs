@@ -10,7 +10,7 @@ namespace GameView.Scene
         public async Task LoadSceneAsync(eScene scene, eLoadSceneMode mode = eLoadSceneMode.Single)
         {
             AsyncOperation asyncOperation = SceneManager.LoadSceneAsync((int)scene, (LoadSceneMode)mode);
-            while (!asyncOperation.isDone) 
+            while (!asyncOperation.isDone)
             {
                 await Task.Yield();
             }

@@ -1,6 +1,4 @@
 ﻿using GameCore.Table;
-using System;
-using System.Collections.Generic;
 
 namespace Table
 {

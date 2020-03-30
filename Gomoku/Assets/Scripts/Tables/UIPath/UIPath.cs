@@ -11,7 +11,7 @@ namespace ScriptableObjects
     {
         [SerializeField]
         private List<UIPathData> list = new List<UIPathData>();
-        
+
         public string GetPath<T>() where T : class
         {
             string name = typeof(T).Name;
