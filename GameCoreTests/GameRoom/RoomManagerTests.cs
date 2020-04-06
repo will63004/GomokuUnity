@@ -1,21 +1,21 @@
 ﻿using GameCore.Pair;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 
 namespace GameCore.GameRoom.Tests
 {
-    [TestFixture()]
+    [TestClass()]
     public class RoomManagerTests
     {
         private RoomManager roomManager;
 
-        [SetUp]
+        [TestInitialize]
         public void SetUp()
         {
             roomManager = new RoomManager();
         }
 
-        [Test()]
+        [TestMethod()]
         public void CreateRoomTest()
         {
             string roomName = "Justice";
@@ -26,7 +26,7 @@ namespace GameCore.GameRoom.Tests
             Assert.AreEqual(room.Name, roomName);
         }
 
-        [Test]
+        [TestMethod]
         public void GetRoomsTest()
         {
             _ = CreateOneRoom("Room1", out _);
@@ -39,7 +39,7 @@ namespace GameCore.GameRoom.Tests
             Assert.AreEqual(rooms.Count, 2);
         }
 
-        [Test]
+        [TestMethod]
         public void EnterEmptyRoomTest()
         {
             //Act
@@ -48,28 +48,28 @@ namespace GameCore.GameRoom.Tests
             Assert.AreEqual(ok, false);
         }
 
-        [Test, TestCaseSource("EnterRoomMember")]
-        public void EnterRoomTest(List<(ulong player, bool answer)> playerAndAnswers)
-        {
-            _ = CreateOneRoom("Room1", out int id);
+        //[Test, TestCaseSource("EnterRoomMember")]
+        //public void EnterRoomTest(List<(ulong player, bool answer)> playerAndAnswers)
+        //{
+        //    _ = CreateOneRoom("Room1", out int id);
 
-            //Act
-            bool[] expecteds = new bool[playerAndAnswers.Count];
-            for (int i = 0; i < playerAndAnswers.Count; ++i)
-            {
-                expecteds[i] = roomManager.EnterRoom(id, playerAndAnswers[i].player);
-            }
+        //    //Act
+        //    bool[] expecteds = new bool[playerAndAnswers.Count];
+        //    for (int i = 0; i < playerAndAnswers.Count; ++i)
+        //    {
+        //        expecteds[i] = roomManager.EnterRoom(id, playerAndAnswers[i].player);
+        //    }
 
-            for (int i = 0; i < playerAndAnswers.Count; ++i)
-                Assert.AreEqual(expecteds[i], playerAndAnswers[i].answer);
-        }
+        //    for (int i = 0; i < playerAndAnswers.Count; ++i)
+        //        Assert.AreEqual(expecteds[i], playerAndAnswers[i].answer);
+        //}
 
-        private static IEnumerable<TestCaseData> EnterRoomMember()
-        {
-            yield return new TestCaseData(new List<(ulong player, bool answer)>() { (1, true) });
-            yield return new TestCaseData(new List<(ulong player, bool answer)>() { (1, true), (2, true) });
-            yield return new TestCaseData(new List<(ulong player, bool answer)>() { (1, true), (2, true), (3, false) });
-        }
+        //private static IEnumerable<TestCaseData> EnterRoomMember()
+        //{
+        //    yield return new TestCaseData(new List<(ulong player, bool answer)>() { (1, true) });
+        //    yield return new TestCaseData(new List<(ulong player, bool answer)>() { (1, true), (2, true) });
+        //    yield return new TestCaseData(new List<(ulong player, bool answer)>() { (1, true), (2, true), (3, false) });
+        //}
 
         private bool CreateOneRoom(string roomName, out int id)
         {

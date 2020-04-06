@@ -1,26 +1,26 @@
-﻿using NUnit.Framework;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace GameCore.Game.Tests
 {
-    [TestFixture()]
+    [TestClass()]
     public class GomokuTests
     {
         private int Size { get; set; } = 30;
         private Gomoku gomoku;
 
-        [SetUp]
+        [TestInitialize]
         public void SetUp()
         {
             gomoku = new Gomoku(Size);
         }
 
-        [Test()]
+        [TestMethod()]
         public void CreateCheckerboard()
         {
             Assert.AreEqual(gomoku.Size, Size);
         }
 
-        [Test]
+        [TestMethod]
         public void AddOneBlackPiece()
         {
             Coordinate coordinate = new Coordinate(0, 0);
@@ -43,7 +43,7 @@ namespace GameCore.Game.Tests
         //    Assert.AreEqual(second, false);
         //}
 
-        [Test]
+        [TestMethod]
         public void CheckWhoWin()
         {
             gomoku.NextTurn(new Coordinate(0, 0))
