@@ -7,7 +7,7 @@ namespace GameCore.GameRoom.Tests
     [TestClass()]
     public class RoomManagerTests
     {
-        private RoomManager roomManager;
+        private IRoomManager roomManager;
 
         [TestInitialize]
         public void SetUp()
@@ -48,28 +48,29 @@ namespace GameCore.GameRoom.Tests
             Assert.AreEqual(ok, false);
         }
 
-        //[Test, TestCaseSource("EnterRoomMember")]
-        //public void EnterRoomTest(List<(ulong player, bool answer)> playerAndAnswers)
-        //{
-        //    _ = CreateOneRoom("Room1", out int id);
+        [DataTestMethod]
+        [DynamicData(nameof(EnterRoomMember), DynamicDataSourceType.Method)]
+        public void EnterRoomTest(List<(ulong player, bool answer)> playerAndAnswers)
+        {
+            _ = CreateOneRoom("Room1", out int id);
 
-        //    //Act
-        //    bool[] expecteds = new bool[playerAndAnswers.Count];
-        //    for (int i = 0; i < playerAndAnswers.Count; ++i)
-        //    {
-        //        expecteds[i] = roomManager.EnterRoom(id, playerAndAnswers[i].player);
-        //    }
+            //Act
+            bool[] expecteds = new bool[playerAndAnswers.Count];
+            for (int i = 0; i < playerAndAnswers.Count; ++i)
+            {
+                expecteds[i] = roomManager.EnterRoom(id, playerAndAnswers[i].player);
+            }
 
-        //    for (int i = 0; i < playerAndAnswers.Count; ++i)
-        //        Assert.AreEqual(expecteds[i], playerAndAnswers[i].answer);
-        //}
+            for (int i = 0; i < playerAndAnswers.Count; ++i)
+                Assert.AreEqual(expecteds[i], playerAndAnswers[i].answer);
+        }
 
-        //private static IEnumerable<TestCaseData> EnterRoomMember()
-        //{
-        //    yield return new TestCaseData(new List<(ulong player, bool answer)>() { (1, true) });
-        //    yield return new TestCaseData(new List<(ulong player, bool answer)>() { (1, true), (2, true) });
-        //    yield return new TestCaseData(new List<(ulong player, bool answer)>() { (1, true), (2, true), (3, false) });
-        //}
+        private static IEnumerable<object[]> EnterRoomMember()
+        {
+            yield return new object[] { new List<(ulong player, bool answer)>() { (1, true) } };
+            yield return new object[] { new List<(ulong player, bool answer)>() { (1, true), (2, true) } };
+            yield return new object[] { new List<(ulong player, bool answer)>() { (1, true), (2, true), (3, false) } };
+        }
 
         private bool CreateOneRoom(string roomName, out int id)
         {

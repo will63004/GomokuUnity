@@ -20,11 +20,15 @@ namespace GameCore.GameFSM
         internal override async Task EnterAsync(eGameFSM curState)
         {
             await uiManager.LoadUIAsync<IUIStartUp>();
+
+            await base.EnterAsync(curState);
         }
 
         internal override async Task ExitAsync()
         {
             await uiManager.UnloadUIAsync<IUIStartUp>();
+
+            await base.ExitAsync();
         }
     }
 }

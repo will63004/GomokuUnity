@@ -49,6 +49,8 @@
     <Compile Include="GameFSM\GameFSM.cs" />
     <Compile Include="GameFSM\GameState.cs" />
     <Compile Include="GameFSM\IGameFSM.cs" />
+    <Compile Include="GameFSM\LoginGameState.cs" />
+    <Compile Include="Pair\IRoomManager.cs" />
     <Compile Include="Table\ITable.cs" />
     <Compile Include="Table\ITableLoader.cs" />
     <Compile Include="UI\IUIRoomPair.cs" />

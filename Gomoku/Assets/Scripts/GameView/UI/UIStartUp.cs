@@ -12,7 +12,7 @@ public class UIStartUp : MonoBehaviour, IUIStartUp
     {
         login.onClick.AddListener(async delegate
         {
-            await TempDI.GameFSM.ChangeFSMAsync(GameCore.GameFSM.eGameFSM.PairRoom);
+            await TempDI.GameFSM.ChangeFSMAsync(GameCore.GameFSM.eGameFSM.Login);
         });
     }
 }

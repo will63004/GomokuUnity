@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace GameCore.Pair
 {
-    public class RoomManager
+    public class RoomManager : IRoomManager
     {
         private Dictionary<int, Room> rooms = new Dictionary<int, Room>();
 

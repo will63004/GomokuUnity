@@ -4,6 +4,7 @@
     {
         Default,
         StartUp,
-        PairRoom
+        PairRoom,
+        Login
     }
 }

@@ -1,5 +1,6 @@
 ﻿using GameCore.DI;
 using GameCore.GameFSM;
+using GameCore.Pair;
 using GameView.Scene;
 using GameView.UI;
 using Table;
@@ -20,7 +21,10 @@ public class Main : MonoBehaviour
         TempDI.UIManager = uiManager;
         await uiManager.Init();
 
-        var gameFSM = new GameFSM(sceneManager, uiManager);
+        var roomManager = new RoomManager();
+        TempDI.RoomManager = roomManager;
+
+        var gameFSM = new GameFSM(sceneManager, uiManager, roomManager);
         TempDI.GameFSM = gameFSM;
 
         await gameFSM.ChangeFSMAsync(eGameFSM.StartUp);

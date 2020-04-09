@@ -1,4 +1,5 @@
 ﻿using GameCore.GameFSM;
+using GameCore.Pair;
 using GameCore.Scene;
 using GameCore.Table;
 using GameCore.UI;
@@ -14,5 +15,6 @@ namespace GameCore.DI
         public static IUIManager UIManager { get; set; }
 
         public static ITableLoader TableLoader { get; set; }
+        public static IRoomManager RoomManager { get; set; }
     }
 }

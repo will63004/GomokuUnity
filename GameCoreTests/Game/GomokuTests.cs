@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace GameCore.Game.Tests
 {
@@ -31,17 +32,16 @@ namespace GameCore.Game.Tests
             Assert.AreEqual(gomoku.CurTurn, ePieceColor.White);
         }
 
-        //[TestCase(0, 0, TestName = "AddSamePosition(0,0)")]
-        //[TestCase(1, 1, TestName = "AddSamePosition(1,1)")]
-        //public void AddSamePosition(int x, int y)
-        //{
-        //    Coordinate coordinate = new Coordinate(x, y);
-        //    gomoku.NextTurn(coordinate);
-        //    bool second = gomoku.NextTurn(ePieceColor.White, coordinate);
-
-        //    Assert.AreEqual(first, true);
-        //    Assert.AreEqual(second, false);
-        //}
+        [DataTestMethod]
+        [DataRow(0, 0, DisplayName = "AddSamePosition(0,0)")]
+        [DataRow(1, 1, DisplayName = "AddSamePosition(1,1)")]
+        public void AddSamePosition(int x, int y)
+        {
+            Coordinate coordinate = new Coordinate(x, y);
+            gomoku.NextTurn(coordinate);
+            
+            Assert.ThrowsException<Exception>(() => gomoku.NextTurn(coordinate));
+        }
 
         [TestMethod]
         public void CheckWhoWin()
